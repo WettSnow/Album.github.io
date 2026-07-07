@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Junio - Our Sweet Revenge</title>
+  <link rel="stylesheet" href="style-letter.css">
+</head>
+<body>
+
+<!-- 🩸 FONDO VIVO Y ANIMADO (ESTILO CÓMIC GÓTICO) -->
+<div class="revenge-bg-effects">
+    
+    <img src="MCR.jpg" alt="MCR Background" class="bg-blur-cover">
+
+    <div class="blood-splatter splatter-1"></div>
+    <div class="blood-splatter splatter-2"></div>
+
+    <div class="bat-ambient bat-1"><div class="bat-body-core"></div></div>
+    <div class="bat-ambient bat-2"><div class="bat-body-core"></div></div>
+
+    <div class="bg-cross cross-1">†</div>
+    <div class="bg-cross cross-2">†</div>
+
+  </div>
+
+
+  <a href="../index.html" class="back-btn">† VOLVER</a>
+
+  <section class="section-welcome">
+    <div class="welcome-box">
+      <h1 class="section-title">JUNIO: WHERE WE BEGAN</h1>
+      <p class="welcome-text">El mes en el que un "sí" convirtió un sentimiento en el comienzo de nuestra historia.</p>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </section>
+
+  <section class="section-letter">
+    <div class="container-action">
+      <p class="section-instruction">Toca el sobre para leer la carta</p>
+      
+      <div class="envelope-trigger" id="envelopeBtn">
+        <div class="bat-wing wing-left"></div>
+        <div class="envelope-body-inside">
+          <div class="envelope-heart-blood"></div>
+        </div>
+        <div class="bat-wing wing-right"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gallery">
+    <div class="gallery-intro-box">
+      <h2 class="gallery-title">Aquí varios momentos</h2>
+      <p class="gallery-instruction">Toca el carrete para revivir las capturas...</p>
+      
+      <div class="gallery-trigger" id="galleryBtn">
+        <div class="tape-decor"></div>
+        <div class="gallery-preview-stack">
+          <div class="preview-photo photo-stack-1"></div>
+          <div class="preview-photo photo-stack-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="popup-overlay" id="letterPopup">
+    <div class="popup-card letter-card-style">
+      <div class="popup-close">† TOCAR PARA CERRAR †</div>
+      <div class="letter-content">
+        <h3>Querida Andrea,</h3>
+        <p>
+        Junio fue el mes en el que realmente empezó lo nuestro. Antes que nada, gracias por haber aceptado caminar conmigo y por responder que sí cuando te pregunté si querías construir algo bonito conmigo. Ese momento me hizo muy feliz y desde ese día esa fecha se volvió muy especial para mí, porque la siento como el inicio de nuestra historia.
+        </p>
+
+        <p>
+        Recuerdo que en ese momento lo único que quería era que supieras cuáles eran mis intenciones contigo. Quería conocerte poco a poco, aprender de ti, entenderte cada día un poquito más y estar a tu lado tanto en los momentos felices como en los difíciles. Mi deseo era acompañarte, escucharte, apoyarte, cuidarte y hacerte sentir querida. Y aunque han pasado los días, sigo sintiendo exactamente lo mismo.
+        </p>
+
+        <p>
+        Sé que a veces expresar lo que sientes no es tan sencillo para ti, y nunca voy a apresurarte por eso. Cada persona tiene su forma de demostrar cariño y su propio tiempo, y quiero respetar el tuyo. Me hace feliz saber que poco a poco vamos aprendiendo más el uno del otro, porque para mí esto nunca ha sido una carrera, sino algo que quiero construir contigo con calma.
+        </p>
+
+        <p>
+        Puede que yo no sea la persona más interesante del mundo y que a veces sea un poco aburrido jajaja, pero sí puedo prometerte que siempre voy a dar lo mejor de mí para verte sonreír, para acompañarte cuando lo necesites y para seguir eligiéndote cada día. Gracias por haberme dejado empezar esta historia contigo. Te quiero muchísimo. ❤️
+        </p>
+        <p> 
+          Pd: ¿Cuando jugamos roblox de nuevo?
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="galleryPopup">
+    <div class="popup-card gallery-card-style" id="galleryPopupContent">
+      <div class="popup-close">† TOCAR PARA CONTINUAR †</div>
+      
+      <div class="comic-photo-container">
+        <img src="" alt="Momento juntos" id="activeGalleryImg">
+        <div class="photo-counter" id="imgCounter">1 / 3</div>
+      </div>
+      
+      <p class="photo-comment" id="activeGalleryComment">Comentario de la foto</p>
+    </div>
+  </div>
+
+  <script src="script-letter.js"></script>
+</body>
+</html>

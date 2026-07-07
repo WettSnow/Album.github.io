@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mayo - Our Sweet Revenge</title>
+  <link rel="stylesheet" href="style-letter.css">
+</head>
+<body>
+
+<!-- 🩸 FONDO VIVO Y ANIMADO (ESTILO CÓMIC GÓTICO) -->
+<div class="revenge-bg-effects">
+    
+    <img src="MCR.jpg" alt="MCR Background" class="bg-blur-cover">
+
+    <div class="blood-splatter splatter-1"></div>
+    <div class="blood-splatter splatter-2"></div>
+
+    <div class="bat-ambient bat-1"><div class="bat-body-core"></div></div>
+    <div class="bat-ambient bat-2"><div class="bat-body-core"></div></div>
+
+    <div class="bg-cross cross-1">†</div>
+    <div class="bg-cross cross-2">†</div>
+
+  </div>
+
+
+  <a href="../index.html" class="back-btn">† VOLVER</a>
+
+  <section class="section-welcome">
+    <div class="welcome-box">
+      <h1 class="section-title">MAYO: THE BEGINNING</h1>
+      <p class="welcome-text">Bienvenida a este capítulo. Desliza hacia abajo para descifrar lo que guardé para ti...</p>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </section>
+
+  <section class="section-letter">
+    <div class="container-action">
+      <p class="section-instruction">Toca el sobre para leer la carta</p>
+      
+      <div class="envelope-trigger" id="envelopeBtn">
+        <div class="bat-wing wing-left"></div>
+        <div class="envelope-body-inside">
+          <div class="envelope-heart-blood"></div>
+        </div>
+        <div class="bat-wing wing-right"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gallery">
+    <div class="gallery-intro-box">
+      <h2 class="gallery-title">Aquí momentos de cuando jugamos</h2>
+      <p class="gallery-instruction">Toca el carrete para revivir las capturas...</p>
+      
+      <div class="gallery-trigger" id="galleryBtn">
+        <div class="tape-decor"></div>
+        <div class="gallery-preview-stack">
+          <div class="preview-photo photo-stack-1"></div>
+          <div class="preview-photo photo-stack-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="popup-overlay" id="letterPopup">
+    <div class="popup-card letter-card-style">
+      <div class="popup-close">† TOCAR PARA CERRAR †</div>
+      <div class="letter-content">
+        <h3>Querida Andrea,</h3>
+        <p> Mayo fue un mes muy bonito para mí, porque de alguna forma fue cuando empezó a existir ese "nosotros". Todavía me acuerdo de mi cumpleaños. Días antes te había contado cuándo era y sinceramente no esperaba que lo recordaras, pero fuiste la primera en felicitarme. Me enviaste TikToks y stickers jajaja, y aunque pueda parecer un detalle pequeño, para mí significó muchísimo. La verdad, aparte de mi mamá, casi nadie suele acordarse de ese día y tampoco acostumbro a celebrarlo, así que hiciste que ese cumpleaños fuera muy especial. En serio, gracias por eso.
+        </p>
+        <p>
+        Y bueno, este también fue el mes en el que por fin me atreví a decirte lo que sentía por ti. Desde ese momento no ha cambiado lo que pienso: eres una chica muy linda, muy graciosa y hermosa. Me encantó cada momento que compartimos jugando, porque contigo siempre me divertía muchísimo y poco a poco me fui dando cuenta de lo increíble que eres. Creo que mayo fue el inicio de algo muy bonito, y la verdad me hace muy feliz que haya sido contigo. Te quiero mucho. ❤️
+        </p>        
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="galleryPopup">
+    <div class="popup-card gallery-card-style" id="galleryPopupContent">
+      <div class="popup-close">† TOCAR PARA CONTINUAR †</div>
+      
+      <div class="comic-photo-container">
+        <img src="" alt="Momento juntos" id="activeGalleryImg">
+        <div class="photo-counter" id="imgCounter">1 / 3</div>
+      </div>
+      
+      <p class="photo-comment" id="activeGalleryComment">Comentario de la foto</p>
+    </div>
+  </div>
+
+  <script src="script-letter.js"></script>
+</body>
+</html>
