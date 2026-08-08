@@ -86,6 +86,45 @@ body {
 }
 
 /* =========================================================
+   👆 INDICADOR DE DESLIZAMIENTO
+   ========================================================= */
+.swipe-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 2px;
+  color: #ef4444;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  user-select: none;
+  pointer-events: none;
+}
+
+.swipe-arrow {
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0;
+  animation: swipeHint 1.4s ease-in-out infinite;
+}
+
+@keyframes swipeHint {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateX(7px);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
    🎡 CARRUSEL HORIZONTAL (SWIPABLE)
    ========================================================= */
 .carousel-wrapper {
