@@ -1,0 +1,303 @@
+/* --- CONFIGURACIÓN DE PÁGINA INTERNA (FLUJO CONTINUO) --- */
+body {
+  margin: 0;
+  background-color: #0d0d0d;
+  /* Fondo radial sutil para dar atmósfera */
+  background-image: radial-gradient(circle at 50% 50%, rgba(185, 28, 28, 0.1) 0%, transparent 80%);
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  overflow-y: auto; 
+  overflow-x: hidden;
+  padding-top: 80px; /* Espacio para que el botón "Volver" no tape la bienvenida */
+}
+
+/* Rediseño de las secciones para que vayan pegadas hacia abajo */
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  padding: 25px 20px; /* Relleno compacto para que todo quede junto */
+  width: 100%;
+}
+
+/* Botón Volver */
+.back-btn {
+  position: fixed;
+  top: 20px; left: 20px;
+  background: #ffffff; color: #000;
+  padding: 6px 12px; text-decoration: none; font-weight: 900; font-size: 12px;
+  border: 3px solid #000; box-shadow: 3px 3px 0px #b91c1c; z-index: 100;
+}
+
+/* --- SECCIÓN 1: BIENVENIDA --- */
+.welcome-box {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  border: 4px solid #000;
+  padding: 20px;
+  background: #121212;
+  box-shadow: 6px 6px 0px #b91c1c;
+  box-sizing: border-box;
+}
+.section-title {
+  font-size: 24px; font-weight: 900; color: #ffffff;
+  -webkit-text-stroke: 1px #000; text-shadow: 3px 3px 0px #b91c1c;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.welcome-text { color: #d1d1d1; font-size: 13px; line-height: 1.5; margin: 0; }
+.scroll-arrow { font-size: 20px; color: #ef4444; margin-top: 10px; animation: bounceArrow 0.8s infinite alternate; }
+
+/* --- SECCIÓN 2: DISPARADOR DE LA CARTA --- */
+.container-action { text-align: center; width: 100%; }
+.section-instruction { color: #ef4444; font-weight: bold; margin-bottom: 20px; font-size: 12px; text-transform: uppercase; }
+
+.envelope-trigger {
+  position: relative; width: 140px; height: 100px; margin: 0 auto; cursor: pointer;
+}
+.envelope-body-inside {
+  width: 100%; height: 100%; background: #ffffff; border: 4px solid #000; border-radius: 4px; box-shadow: 5px 5px 0px #b91c1c; position: relative; z-index: 2;
+}
+.envelope-heart-blood {
+  position: absolute; top: 38px; left: 50%; transform: translateX(-50%) rotate(-45deg);
+  width: 14px; height: 14px; background-color: #ef4444; border: 2.5px solid #000; border-top: none; border-right: none;
+}
+.envelope-heart-blood::before, .envelope-heart-blood::after { content: ""; position: absolute; width: 14px; height: 14px; background-color: #ef4444; border: 2.5px solid #000; border-radius: 50%; }
+.envelope-heart-blood::before { top: -9.5px; left: -2.5px; border-bottom: none; border-right: none; }
+.envelope-heart-blood::after { top: -2.5px; right: -9.5px; border-left: none; border-bottom: none; }
+
+/* Alas de murciélago */
+.bat-wing { position: absolute; width: 40px; height: 26px; background: #1e1e1e; border: 3px solid #000; z-index: 1; top: 28px; }
+.wing-left { left: -34px; border-radius: 12px 0 30px 0; clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 75% 70%, 45% 100%, 25% 65%); }
+.wing-right { right: -34px; border-radius: 0 12px 0 30px; clip-path: polygon(100% 15%, 0% 0%, 0% 100%, 25% 70%, 55% 100%, 75% 65%); }
+
+/* --- SECCIÓN 3: DISPARADOR DE LA GALERÍA --- */
+.gallery-intro-box { text-align: center; width: 100%; }
+.gallery-title { font-size: 20px; font-weight: 900; text-shadow: 3px 3px 0px #b91c1c; margin-top: 10px; margin-bottom: 5px; }
+.gallery-instruction { color: #a3a3a3; font-size: 11px; margin-bottom: 20px; }
+.gallery-trigger { position: relative; width: 120px; height: 120px; margin: 0 auto; cursor: pointer; }
+
+/* Efecto de fotos apiladas viejas */
+.gallery-preview-stack { position: relative; width: 100%; height: 100%; }
+.preview-photo { position: absolute; width: 100%; height: 100%; background: #fff; border: 3px solid #000; box-sizing: border-box; }
+.photo-stack-1 { transform: rotate(-6deg); z-index: 2; background-color: #f3f4f6; }
+.photo-stack-2 { transform: rotate(8deg); z-index: 1; background-color: #e5e7eb; box-shadow: 4px 4px 0px #b91c1c; }
+.tape-decor { width: 50px; height: 18px; background: rgba(255,255,255,0.2); border: 1px dashed #fff; position: absolute; top: -12px; left: 35px; z-index: 5; transform: rotate(-2deg); }
+
+
+/* =========================================================
+     🎯 ESTILOS DE LOS POPUPS (SIN CAMBIOS, OCUPAN LA PANTALLA)
+   ========================================================= */
+.popup-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000; display: flex; justify-content: center; align-items: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  padding: 20px; box-sizing: border-box;
+}
+.popup-overlay.active { opacity: 1; pointer-events: auto; }
+
+.popup-card {
+  background: #ffffff; color: #000000; border: 4px solid #000;
+  box-shadow: 8px 8px 0px #b91c1c; width: 100%; max-width: 420px;
+  padding: 20px; box-sizing: border-box; position: relative;
+  transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.popup-overlay.active .popup-card { transform: scale(1); }
+
+.popup-close {
+  font-size: 10px; font-weight: 900; text-align: center; color: #b91c1c;
+  margin-bottom: 15px; letter-spacing: 1px; cursor: pointer;
+}
+
+.letter-card-style { background: #fffbeb; max-height: 80vh; overflow-y: auto; }
+.letter-content h3 { margin-top: 0; font-weight: 900; color: #b91c1c; }
+.letter-content p { font-size: 14px; line-height: 1.6; color: #1e293b; }
+
+.gallery-card-style { background: #ffffff; text-align: center; }
+.comic-photo-container { position: relative; border: 3px solid #000; background: #000; }
+.comic-photo-container img { width: 100%; height: auto; max-height: 280px; object-fit: cover; display: block; }
+.photo-counter { position: absolute; bottom: 10px; right: 10px; background: #000; color: #fff; padding: 2px 6px; font-size: 10px; font-weight: bold; }
+.photo-comment { font-weight: bold; font-size: 13px; margin-top: 15px; text-transform: uppercase; color: #000; border-top: 2px dashed #000; padding-top: 10px; }
+
+/* --- ELEMENTOS DE AMBIENTE --- */
+.revenge-bg-effects { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+/* 🩸 EVENTOS NORMALES (z-index: 2 para ponerse sobre la foto borrosa) */
+.blood-splatter {
+  position: absolute;
+  background: #7f1d1d;
+  border: 4px solid #000000;
+  border-radius: 40% 60% 30% 70%;
+  opacity: 0.3;
+  z-index: 2;
+}
+.falling-rose { position: absolute; width: 8px; height: 8px; background: #ef4444; border: 2px solid #000; border-radius: 50% 0 50% 50%; opacity: 0.3; animation: fallDown linear infinite; }
+.rose-1 { left: 15%; animation-duration: 6s; } .rose-2 { left: 85%; animation-duration: 8s; animation-delay: 2s; }
+
+@keyframes bounceArrow { 0% { transform: translateY(0); } 100% { transform: translateY(-6px); } }
+@keyframes fallDown { 0% { transform: translateY(-5vh) rotate(0deg); } 100% { transform: translateY(105vh) rotate(360deg); } }
+
+/* =========================================================
+   🦇 ANIMACIONES Y DETALLES DEL FONDO VIVO
+   ========================================================= */
+
+/* =========================================================
+   🎨 TEXTURA DE FONDO: RAYONES IRREGULARES Y MANCHAS DE TINTA
+   ========================================================= */
+
+.revenge-bg-effects {
+  position: fixed; /* Cambiado a fixed para que la portada cubra toda la pantalla del cel y no se mueva al hacer scroll */
+  top: 0; left: 0; 
+  width: 100vw; height: 100vh;
+  z-index: -1; 
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-blur-cover {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; /* Se estira para cubrir toda la pantalla del teléfono */
+  filter: blur(25px) contrast(110%) brightness(50%); /* Mucho desenfoque, buen contraste y oscurecido para que resalte la carta */
+  transform: scale(1.1); /* Evita que se vean bordes blancos o raros por el efecto blur */
+  z-index: 1;
+}
+
+/* 🖌️ MANCHAS DE PINTURA / TINTA DERRAMADA */
+.ink-splatter {
+  position: absolute;
+  background: #7f1d1d; /* Rojo sangre oscuro/tinta */
+  border: 4px solid #000000; /* Contorno de dibujo tosco */
+  opacity: 0.18;
+}
+/* Mancha abstracta arriba a la izquierda */
+.ink-top-left {
+  top: -40px; left: -50px;
+  width: 240px; height: 190px;
+  border-radius: 35% 65% 40% 60% / 50% 30% 70% 50%;
+  transform: rotate(15deg);
+}
+/* Mancha abajo a la derecha */
+.ink-bottom-right {
+  bottom: 50px; right: -60px;
+  width: 280px; height: 220px;
+  background: #5c1111;
+  border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
+  transform: rotate(-25deg);
+}
+/* Gota aislada en el medio del scroll */
+.ink-middle-drop {
+  top: 45%; left: 15%;
+  width: 45px; height: 55px;
+  border-radius: 50% 50% 30% 70%;
+  transform: rotate(45deg);
+}
+
+/* ✏️ RAYONES IRREGULARES (Efecto tachado / boceto a pluma) */
+.sketch-scratch {
+  position: absolute;
+  background: #1a1a1a; /* Trazos negros sobre el fondo oscuro */
+  opacity: 0.4;
+}
+/* Grupo de rayones diagonales cruzados 1 */
+.scratch-1 {
+  top: 15%; right: 10%;
+  width: 150px; height: 3px;
+  transform: rotate(-35deg);
+  box-shadow: 
+    0 8px 0 #1a1a1a, 
+    0 -6px 0 #1a1a1a,
+    20px 14px 0 #1a1a1a; /* Simula múltiples pasadas del lápiz */
+}
+/* Rayones ásperos estilo tachón vertical 2 */
+.scratch-2 {
+  top: 55%; left: 8%;
+  width: 4px; height: 120px;
+  transform: rotate(12deg);
+  box-shadow: 
+    6px 0 0 #1a1a1a, 
+    -5px 10px 0 #1a1a1a;
+}
+/* Trazos en x debajo de la bienvenida */
+.scratch-3 {
+  top: 32%; left: 45%;
+  width: 90px; height: 2px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 1px #1a1a1a;
+}
+/* Rayones pesados al final de la página */
+.scratch-4 {
+  bottom: 12%; left: 25%;
+  width: 180px; height: 3px;
+  transform: rotate(-15deg);
+  box-shadow: 
+    0 5px 0 #1a1a1a, 
+    10px -4px 0 #1a1a1a,
+    -15px 12px 0 #1a1a1a;
+}
+
+/* ✝️ CRUCES ESTÁTICAS ENTINTADAS */
+.canvas-cross {
+  position: absolute;
+  color: #161616;
+  font-size: 36px;
+  font-weight: 900;
+  -webkit-text-stroke: 1.5px #000000; /* Súper definidas estilo ilustración */
+  opacity: 0.6;
+}
+.cross-pos-1 { top: 25%; left: 20%; transform: rotate(-10deg); }
+.cross-pos-2 { top: 80%; right: 22%; transform: rotate(15deg); }
+
+/* Construcción del murciélago con silueta clip-path */
+.bat-body-core {
+  width: 100%; height: 100%;
+  background: #000000;
+  border: 2px solid #ffffff; /* Borde blanco para look cartoon de noche */
+  clip-path: polygon(50% 30%, 60% 0%, 65% 25%, 85% 10%, 100% 40%, 85% 60%, 70% 45%, 50% 100%, 30% 45%, 15% 60%, 0% 40%, 15% 10%, 35% 25%, 40% 0%);
+  animation: batWingFlap 0.4s infinite ease-in-out alternate;
+}
+
+/* Rutas de vuelo individuales para cada murciélago */
+.bat-1 { left: -50px; top: 12%; animation: flyAcrossRight 14s linear infinite; }
+.bat-2 { right: -50px; top: 55%; animation: flyAcrossLeft 18s linear infinite; animation-delay: 4s; }
+
+/* --- ANIMACIONES DE MOVIMIENTO --- */
+
+/* --- ANIMACIONES --- */
+@keyframes batWingFlap { 0% { transform: scaleY(0.6); } 100% { transform: scaleY(1.2); } }
+@keyframes floatGothic { 0% { transform: translateY(0) rotate(-5deg); } 100% { transform: translateY(-10px) rotate(10deg); } }
+@keyframes flyAcrossRight { 0% { left: -50px; transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { left: 105%; transform: translateY(0px); } }
+@keyframes flyAcrossLeft { 0% { right: -50px; transform: translateY(0px) scaleX(-1); } 50% { transform: translateY(15px) scaleX(-1); } 100% { right: 105%; transform: translateY(0px) scaleX(-1); } }
+
+/* Asegurar que las manchas extra no rompan la estructura */
+.splatter-1 { top: 15%; left: -40px; width: 160px; height: 130px; }
+.splatter-2 { bottom: 20%; right: -50px; width: 180px; height: 150px; }
+.rose-3 { left: 50%; animation-duration: 10s; animation-delay: 1s; }
+
+/* ✝️ CRUCES NÍTIDAS */
+.bg-cross {
+  position: absolute;
+  color: #000000;
+  font-size: 36px;
+  font-weight: 900;
+  -webkit-text-stroke: 1px #ffffff; /* Borde blanco para que resalte sobre el fondo de la foto */
+  opacity: 0.4;
+  z-index: 2;
+  animation: floatGothic 4s infinite ease-in-out alternate;
+}
+
+.cross-1 { top: 25%; left: 10%; }
+.cross-2 { top: 70%; right: 12%; animation-delay: 1.5s; }
+
+/* 🦇 MURCIÉLAGOS VOLANDO NÍTIDOS */
+.bat-ambient {
+  position: absolute;
+  width: 45px; height: 28px;
+  z-index: 2;
+  opacity: 0.4;
+}

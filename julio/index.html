@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julio - Our Sweet Revenge</title>
+  <link rel="stylesheet" href="style-letter.css">
+</head>
+<body>
+
+<!-- 🩸 FONDO VIVO Y ANIMADO (ESTILO CÓMIC GÓTICO) -->
+<div class="revenge-bg-effects">
+    
+    <img src="MCR.jpg" alt="MCR Background" class="bg-blur-cover">
+
+    <div class="blood-splatter splatter-1"></div>
+    <div class="blood-splatter splatter-2"></div>
+
+    <div class="bat-ambient bat-1"><div class="bat-body-core"></div></div>
+    <div class="bat-ambient bat-2"><div class="bat-body-core"></div></div>
+
+    <div class="bg-cross cross-1">†</div>
+    <div class="bg-cross cross-2">†</div>
+
+  </div>
+
+
+  <a href="../index.html" class="back-btn">† VOLVER</a>
+
+  <section class="section-welcome">
+    <div class="welcome-box">
+      <h1 class="section-title">JULIO</h1>
+      <p class="welcome-text">Te quiero igual</p>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </section>
+
+  <section class="section-letter">
+    <div class="container-action">
+      <p class="section-instruction">Toca el sobre para leer la carta</p>
+      
+      <div class="envelope-trigger" id="envelopeBtn">
+        <div class="bat-wing wing-left"></div>
+        <div class="envelope-body-inside">
+          <div class="envelope-heart-blood"></div>
+        </div>
+        <div class="bat-wing wing-right"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gallery">
+    <div class="gallery-intro-box">
+      <h2 class="gallery-title">Aquí varios momentos</h2>
+      <p class="gallery-instruction">Toca el carrete para revivir las capturas...</p>
+      
+      <div class="gallery-trigger" id="galleryBtn">
+        <div class="tape-decor"></div>
+        <div class="gallery-preview-stack">
+          <div class="preview-photo photo-stack-1"></div>
+          <div class="preview-photo photo-stack-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="popup-overlay" id="letterPopup">
+    <div class="popup-card letter-card-style">
+      <div class="popup-close">† TOCAR PARA CERRAR †</div>
+      <div class="letter-content">
+        <p>
+          Hola amor<br><br>
+
+          Lo siento voy un poco tarde.<br><br>
+
+          Primero gracias, por darme tiempo, al menos un poco. Este mes fue raro jajaja, pasaron cosas.<br><br>
+
+          Una noche te conté cosas que no le digo a nadie, y el hecho es que confío en ti.<br><br>
+
+          Estuve pensando en ti mucho tiempo, y como lo dijiste en aquella conversación, esto no será fácil, pero yo lo sabía desde antes.<br><br>
+
+          Me planteé muchas noches si realmente quería hacerlo, si debía hacerlo, y pues concluí que sí, que sí vales la pena todo el esfuerzo, y que aunque tuviera miedo lo iba a intentar y pues lo hice y te propuse conocernos más, y ha sido muy bonito para mí, y espero que para ti también.<br><br>
+
+          No soy la mejor versión de mí, aún trabajo en eso, pero quiero que seas tú quien pueda disfrutarla y vivirla.<br><br>
+
+          No importan los problemas, mientras esté aquí vas a ser mi mayor obsesión y mi suerte<br><br>
+
+          Y sé que ocultas cosas como cualquier persona y tal vez te da miedo expresarlo conmigo, tal vez tengas miedo de lo que pueda ocurrir o como vaya a actuar. Pero quiero que sepas que todo eso lo amaré tambien porque es parte de ti y te seguiré viendo igual.<br><br>
+
+          Como te lo dije una vez, vine a tu vida para quererte y cuidarte, a conocer quién eres realmente y a quedarme. Me preocupan las cosas que te preocupan y quiero conocer todo lo que nadie se tomó la molestia de conocer antes. No te voy a abandonar, en tus días difíciles, y cuando sientas que tu mundo se derrumba eres bienvenida al mio, podemos estar juntos en mi ruido, pero con música eh, puedes mostrarte débil si así lo deseas, yo te estaré apoyando siempre, no tienes que ser fuerte todo el tiempo.<br><br>
+
+          Y como recordatorio, tu corazón vale muchísimo, tú vales muchísimo, tienes un alma hermosa y te mereces todo lo bueno en este mundo. De eso estoy seguro.<br><br>
+
+          Te quiero mucho amor y quiero seguir enamorándome de ti, eres una casualidad muy bonita que me pasó y no la quiero dejar ir nunca más.<br><br>
+
+          Pd: NO sé si verás esto, y si lo llegas a ver hazmelo saber, me haría muy feliz.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="galleryPopup">
+    <div class="popup-card gallery-card-style" id="galleryPopupContent">
+      <div class="popup-close">† TOCAR PARA CONTINUAR †</div>
+      
+      <div class="comic-photo-container">
+        <img src="" alt="Momento juntos" id="activeGalleryImg">
+        <div class="photo-counter" id="imgCounter">1 / 3</div>
+      </div>
+      
+      <p class="photo-comment" id="activeGalleryComment">Comentario de la foto</p>
+    </div>
+  </div>
+
+  <script src="script-letter.js"></script>
+</body>
+</html>
