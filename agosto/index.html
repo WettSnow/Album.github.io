@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agosto - Our Sweet Revenge</title>
+  <link rel="stylesheet" href="style-letter.css">
+</head>
+<body>
+
+<!-- 🩸 FONDO VIVO Y ANIMADO (ESTILO CÓMIC GÓTICO) -->
+<div class="revenge-bg-effects">
+    
+    <img src="MCR.jpg" alt="MCR Background" class="bg-blur-cover">
+
+    <div class="blood-splatter splatter-1"></div>
+    <div class="blood-splatter splatter-2"></div>
+
+    <div class="bat-ambient bat-1"><div class="bat-body-core"></div></div>
+    <div class="bat-ambient bat-2"><div class="bat-body-core"></div></div>
+
+    <div class="bg-cross cross-1">†</div>
+    <div class="bg-cross cross-2">†</div>
+
+  </div>
+
+
+  <a href="../index.html" class="back-btn">† VOLVER</a>
+
+  <section class="section-welcome">
+    <div class="welcome-box">
+      <h1 class="section-title">AGOSTO</h1>
+      <p class="welcome-text">I LOVE YOU</p>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </section>
+
+  <section class="section-letter">
+    <div class="container-action">
+      <p class="section-instruction">Toca el sobre para leer la carta</p>
+      
+      <div class="envelope-trigger" id="envelopeBtn">
+        <div class="bat-wing wing-left"></div>
+        <div class="envelope-body-inside">
+          <div class="envelope-heart-blood"></div>
+        </div>
+        <div class="bat-wing wing-right"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gallery">
+    <div class="gallery-intro-box">
+      <h2 class="gallery-title">Aquí varios momentos</h2>
+      <p class="gallery-instruction">Toca el carrete para revivir las capturas...</p>
+      
+      <div class="gallery-trigger" id="galleryBtn">
+        <div class="tape-decor"></div>
+        <div class="gallery-preview-stack">
+          <div class="preview-photo photo-stack-1"></div>
+          <div class="preview-photo photo-stack-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="popup-overlay" id="letterPopup">
+    <div class="popup-card letter-card-style">
+      <div class="popup-close">† TOCAR PARA CERRAR †</div>
+      <div class="letter-content"> 
+        <p> 
+          Querida Andrea:<br><br>
+
+      Amor, es la carta de final de mes y quiero decirte muchas cosas.<br><br>
+
+      Un mes más, donde pasaron muchas cosas. Estoy agradecido con Dios y con la vida porque hayas aparecido; fue uno de los eventos más importantes de mi año.<br><br>
+
+      Te dedico este fragmento de Pablo Neruda:<br><br>
+
+      “Te amo sin saber cómo, ni cuándo, ni desde dónde,<br>
+      te amo directamente sin problemas ni orgullo:<br>
+      te amo así porque no sé amar de otra manera,<br>
+      sino de esta forma en la que no soy ni estás tú,<br>
+      tan cerca que tu mano sobre mi pecho es mi mano,<br>
+      tan cerca que tus ojos se cierran con mis sueños.”<br><br>
+
+      Porque describe la forma en que pienso en ti.<br><br>
+
+      No te diré que eres la mujer más hermosa del mundo, porque aunque sí lo eres, el mundo está lleno de ojos que no ven lo que yo veo.<br><br>
+
+      Voy a decirte cosas más peligrosas:<br><br>
+
+      Desde que llegaste a mi vida, mis días tienen tu costumbre. Apareces en cada instante: en el primer sorbo de café por las mañanas, en la música que no sabía que me gustaba, en los silencios... En todo termino encontrándote.<br><br>
+
+      Te quiero, y no porque te necesite para vivir. Te quiero porque, entre tantas personas, eres la única con la que quiero compartir hasta la más mínima cosa: una noche de lluvia, conversaciones sin sentido, la música que me gusta, incluso el silencio que me da paz. Todo me gustaría compartirlo contigo.<br><br>
+
+      Y si el tiempo insiste en separarnos, pues tendrá un problema, porque ya te guardé en un lugar de mi corazón donde almaceno lo más importante; donde los recuerdos no se olvidan ni se van, donde no envejecen, donde son eternos y donde seguirás viviendo incluso después de que termine este escrito.<br><br>
+
+      Si lees todo esto, házmelo saber. Me haría muy feliz saber que llegaste hasta el final y que, por un momento, estuviste aquí conmigo leyendo todo esto que quería decirte.
+
+        </p> 
+      </div>
+
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="galleryPopup">
+    <div class="popup-card gallery-card-style" id="galleryPopupContent">
+      <div class="popup-close">† TOCAR PARA CONTINUAR †</div>
+      
+      <div class="comic-photo-container">
+        <img src="" alt="Momento juntos" id="activeGalleryImg">
+        <div class="photo-counter" id="imgCounter">1 / 3</div>
+      </div>
+      
+      <p class="photo-comment" id="activeGalleryComment">Comentario de la foto</p>
+    </div>
+  </div>
+
+  <script src="script-letter.js"></script>
+</body>
+</html>
