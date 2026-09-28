@@ -123,7 +123,6 @@ body {
   }
 }
 
-
 /* =========================================================
    🎡 CARRUSEL HORIZONTAL (SWIPABLE)
    ========================================================= */
@@ -363,4 +362,1069 @@ body {
 .widget-close-btn {
   background: #ef4444; color: #000000; border: 2px solid #000000; font-weight: bold; font-size: 12px;
   cursor: pointer; padding: 0px 5px; border-radius: 4px; box-shadow: 2px 2px 0px #000000;
+}
+
+/* =========================================================
+   🌸 ESTÉTICA NUEVA — SCRAPBOOK TIERNO / AGOSTO
+   Mantiene la estructura y clases existentes.
+   Se añade al final para reemplazar únicamente la estética.
+   ========================================================= */
+
+:root {
+  --paper: #fffaf7;
+  --paper-pink: #fff0f4;
+  --paper-old: #fdf5ec;
+
+  --pink: #e8a1b5;
+  --pink-dark: #c87591;
+  --pink-light: #f7cad8;
+
+  --lavender: #dcd2ec;
+  --lavender-dark: #9c8bab;
+
+  --blue: #dcebf0;
+
+  --brown: #624d52;
+  --brown-light: #8b7479;
+  --ink: #715c62;
+
+  --cream: #fffdf8;
+  --border: #d8c1c6;
+  --shadow: rgba(98, 77, 82, 0.15);
+}
+
+/* ---------------------------------------------------------
+   🌷 FONDO PRINCIPAL
+   --------------------------------------------------------- */
+
+body {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(
+      circle at 8% 12%,
+      rgba(247, 202, 216, 0.60) 0%,
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 92% 28%,
+      rgba(220, 210, 236, 0.55) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 45% 100%,
+      rgba(220, 235, 240, 0.45) 0%,
+      transparent 30%
+    );
+  color: var(--brown);
+  font-family:
+    "Trebuchet MS",
+    "Segoe UI",
+    sans-serif;
+}
+
+/* Textura muy ligera de papel */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.30;
+  background-image:
+    radial-gradient(
+      rgba(98, 77, 82, 0.08) 0.7px,
+      transparent 0.7px
+    );
+  background-size: 15px 15px;
+}
+
+/* ---------------------------------------------------------
+   💌 CONTENEDOR
+   --------------------------------------------------------- */
+
+.album-container {
+  max-width: 500px;
+  padding: 48px 18px 60px;
+  position: relative;
+  z-index: 10;
+}
+
+/* ---------------------------------------------------------
+   📸 FOTO PRINCIPAL — POLAROID DE SCRAPBOOK
+   --------------------------------------------------------- */
+
+.photo-frame-cartoon {
+  width: 190px;
+  padding: 9px 9px 27px;
+  margin: 0 auto 27px;
+  background: #fffdfb;
+  border: 1px solid #d4c0c5;
+  border-radius: 3px 6px 4px 7px;
+  box-shadow:
+    7px 8px 0 var(--pink-light),
+    0 10px 25px rgba(98, 77, 82, 0.13);
+  transform: rotate(-2.5deg);
+}
+
+.photo-frame-cartoon::before {
+  content: "";
+  position: absolute;
+  width: 58px;
+  height: 19px;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(247, 202, 216, 0.85);
+  border: 1px dashed #c992a5;
+  border-radius: 2px;
+  z-index: 5;
+}
+
+.photo-frame-cartoon:hover,
+.photo-frame-cartoon:active {
+  transform: rotate(1deg) scale(1.025);
+  box-shadow:
+    8px 9px 0 var(--lavender),
+    0 12px 26px rgba(98, 77, 82, 0.14);
+}
+
+.revenge-photo {
+  height: 165px;
+  border: 1px solid #d4c0c5;
+  border-radius: 2px;
+  filter: saturate(82%) contrast(98%);
+}
+
+.photo-caption {
+  color: var(--brown);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: none;
+  letter-spacing: 0.4px;
+}
+
+/* ---------------------------------------------------------
+   🌸 TÍTULO
+   --------------------------------------------------------- */
+
+.album-title {
+  color: var(--pink-dark);
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  -webkit-text-stroke: 0;
+  text-shadow:
+    2px 2px 0 rgba(247, 202, 216, 0.75);
+}
+
+.album-title::after {
+  content: "  ♡";
+  color: var(--pink);
+}
+
+.album-subtitle {
+  color: var(--brown-light);
+  background: rgba(255, 253, 248, 0.88);
+  border: 1px dashed #d5b9c1;
+  border-radius: 18px;
+  padding: 6px 14px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  text-transform: none;
+  box-shadow: 2px 3px 0 rgba(220, 210, 236, 0.7);
+}
+
+/* ---------------------------------------------------------
+   👆 INDICADOR
+   --------------------------------------------------------- */
+
+.swipe-hint {
+  color: var(--pink-dark);
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: none;
+}
+
+.swipe-hint::before {
+  content: "♡ ";
+}
+
+.swipe-hint::after {
+  content: " ♡";
+}
+
+/* ---------------------------------------------------------
+   🎀 CARRUSEL
+   --------------------------------------------------------- */
+
+.carousel-wrapper {
+  margin-top: 12px;
+  padding: 25px 0 48px;
+}
+
+.cards-grid {
+  gap: 48px;
+  padding: 20px 115px;
+}
+
+/* ---------------------------------------------------------
+   💌 SOBRES — ESTILO AGOSTO
+   --------------------------------------------------------- */
+
+.envelope-card {
+  width: 175px;
+  height: 128px;
+}
+
+.envelope-body {
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fff1f5
+    );
+  border: 1px solid #cdb8bf;
+  border-radius: 5px 8px 6px 9px;
+  box-shadow:
+    6px 7px 0 var(--pink-light),
+    0 8px 18px rgba(98, 77, 82, 0.11);
+}
+
+.envelope-card.active:hover .envelope-body,
+.envelope-card.active:active .envelope-body {
+  transform: translateY(-9px) rotate(-1deg) scale(1.025);
+  box-shadow:
+    7px 9px 0 var(--lavender),
+    0 11px 22px rgba(98, 77, 82, 0.13);
+}
+
+.envelope-card.active .envelope-flap {
+  width: 175px;
+  height: 62px;
+  top: -1px;
+  left: -1px;
+  background: #f9e3ea;
+  border: 1px solid #cdb8bf;
+  border-radius: 0 0 42px 42px;
+}
+
+.envelope-paper {
+  bottom: 6px;
+  left: 7px;
+  width: 153px;
+  height: 105px;
+  background:
+    linear-gradient(
+      145deg,
+      #fffdf8,
+      #fff3f6
+    );
+  border: 1px solid #d5c0c5;
+}
+
+.month-text {
+  color: var(--pink-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.status-text {
+  color: var(--brown-light);
+  font-size: 8px;
+  letter-spacing: 1.2px;
+}
+
+.envelope-heart-blood {
+  width: 16px;
+  height: 16px;
+  background-color: var(--pink);
+  border-color: #ad7184;
+  box-shadow: 1px 2px 0 rgba(98, 77, 82, 0.14);
+}
+
+.envelope-heart-blood::before,
+.envelope-heart-blood::after {
+  background-color: var(--pink);
+  border-color: #ad7184;
+}
+
+/* ---------------------------------------------------------
+   🪽 ALITAS — CAMBIAN A DECORACIÓN SUAVE
+   --------------------------------------------------------- */
+
+.bat-wing {
+  width: 42px;
+  height: 27px;
+  background: var(--lavender);
+  border: 1px solid #b9aac8;
+  opacity: 0.82;
+  filter: saturate(75%);
+}
+
+/* ---------------------------------------------------------
+   🔒 SOBRES BLOQUEADOS
+   --------------------------------------------------------- */
+
+.envelope-card.locked {
+  opacity: 0.48;
+}
+
+.envelope-card.locked .envelope-body {
+  background: #f1ebef;
+  border-color: #cfc0c6;
+  box-shadow: 4px 4px 0 #ddd2e1;
+}
+
+.envelope-card.locked .envelope-paper {
+  background: #eee7eb;
+  border-color: #d5c8cd;
+}
+
+.envelope-card.locked .month-text,
+.envelope-card.locked .status-text {
+  color: #a99aa0;
+}
+
+.locked-cross {
+  color: var(--pink-dark);
+  -webkit-text-stroke: 0;
+}
+
+/* ---------------------------------------------------------
+   🌸 FONDO DECORATIVO
+   Quitamos sangre, cruces y letras góticas.
+   Conservamos la estructura para no romper el HTML.
+   --------------------------------------------------------- */
+
+.revenge-bg-effects {
+  z-index: 1;
+  overflow: hidden;
+}
+
+.blood-splatter {
+  background: var(--pink-light);
+  border: 1px solid #e3bdc9;
+  opacity: 0.20;
+  filter: blur(1px);
+}
+
+.splatter-1 {
+  top: -35px;
+  left: -45px;
+  width: 220px;
+  height: 170px;
+  border-radius: 35% 65% 40% 60% / 50% 30% 70% 50%;
+  transform: rotate(15deg);
+}
+
+.splatter-2 {
+  bottom: -55px;
+  right: -55px;
+  width: 250px;
+  height: 200px;
+  background: var(--lavender);
+  border: 0;
+  border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
+  transform: rotate(-20deg);
+}
+
+.splatter-3 {
+  top: 55%;
+  left: 8%;
+  width: 42px;
+  height: 52px;
+  background: var(--blue);
+  border: 0;
+  border-radius: 50% 50% 30% 70%;
+}
+
+.bg-cross {
+  color: var(--pink-light);
+  opacity: 0.28;
+  -webkit-text-stroke: 0;
+  font-family: Georgia, serif;
+}
+
+.bg-lyric {
+  color: var(--pink-dark);
+  font-family: Georgia, serif;
+  font-weight: normal;
+  opacity: 0.10;
+}
+
+/* Las cruces góticas dejan de dominar la página. */
+
+.cross-1,
+.cross-2,
+.cross-3,
+.cross-4 {
+  opacity: 0.16;
+}
+
+/* ---------------------------------------------------------
+   🌷 ELEMENTOS QUE CAEN
+   --------------------------------------------------------- */
+
+.falling-rose {
+  width: 8px;
+  height: 8px;
+  background: var(--pink);
+  border: 1px solid #bd8297;
+  box-shadow: none;
+  opacity: 0.38;
+}
+
+/* ---------------------------------------------------------
+   💗 "PARENTAL ADVISORY" — CONVERTIDO EN STICKER
+   --------------------------------------------------------- */
+
+.parental-advisory {
+  background: #fffdf8;
+  color: var(--brown);
+  padding: 7px 14px;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  border: 1px solid #d6bdc5;
+  border-radius: 4px 7px 5px 6px;
+  box-shadow:
+    4px 5px 0 var(--pink-light),
+    0 5px 12px rgba(98, 77, 82, 0.08);
+  transform: rotate(-1deg);
+}
+
+.advisory-top,
+.advisory-main,
+.advisory-bottom {
+  color: var(--brown);
+}
+
+.advisory-main {
+  border-bottom: 1px dashed #d6bdc5;
+}
+
+/* ---------------------------------------------------------
+   🎵 SPOTIFY — INTEGRADO AL SCRAPBOOK
+   --------------------------------------------------------- */
+
+.spotify-widget-floating {
+  width: 290px;
+  background:
+    linear-gradient(
+      145deg,
+      #fffdfb,
+      #fff0f4
+    );
+  border: 1px solid #d5bdc4;
+  box-shadow:
+    5px 6px 0 var(--pink-light),
+    0 12px 25px rgba(98, 77, 82, 0.16);
+  border-radius: 9px;
+}
+
+.widget-header {
+  background: rgba(247, 202, 216, 0.65);
+  border-bottom: 1px dashed #d3aab7;
+}
+
+.widget-title {
+  color: var(--pink-dark);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-size: 10px;
+}
+
+.widget-close-btn {
+  background: var(--pink);
+  color: white;
+  border: 1px solid #ad7184;
+  box-shadow: 1px 2px 0 rgba(98, 77, 82, 0.16);
+}
+
+/* ---------------------------------------------------------
+   📎 MEMES FLOTANTES — OPCIONAL
+   Agrega elementos con class="floating-meme meme-1", etc.
+   --------------------------------------------------------- */
+
+.floating-meme {
+  position: absolute;
+  width: 82px;
+  max-width: 22vw;
+  padding: 5px;
+  box-sizing: border-box;
+  background: #fffdfb;
+  border: 1px solid #d2bec4;
+  border-radius: 3px;
+  box-shadow:
+    3px 4px 0 var(--pink-light),
+    0 5px 12px rgba(98, 77, 82, 0.10);
+  z-index: 6;
+  pointer-events: none;
+  object-fit: cover;
+}
+
+.floating-meme img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.meme-1 {
+  top: 17%;
+  left: 2%;
+  transform: rotate(-8deg);
+}
+
+.meme-2 {
+  top: 39%;
+  right: 1%;
+  transform: rotate(7deg);
+}
+
+.meme-3 {
+  top: 66%;
+  left: 4%;
+  transform: rotate(5deg);
+}
+
+.meme-4 {
+  top: 83%;
+  right: 4%;
+  transform: rotate(-6deg);
+}
+
+.meme-5 {
+  top: 80%;
+  left: 5%;
+  transform: rotate(0deg);
+}
+
+/* ---------------------------------------------------------
+   💕 STICKERS OPCIONALES
+   --------------------------------------------------------- */
+
+.scrap-sticker {
+  position: absolute;
+  z-index: 5;
+  font-family: Georgia, serif;
+  color: var(--pink-dark);
+  opacity: 0.75;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sticker-heart {
+  font-size: 29px;
+  transform: rotate(-12deg);
+}
+
+.sticker-flower {
+  font-size: 24px;
+  transform: rotate(8deg);
+}
+
+.sticker-sparkle {
+  font-size: 20px;
+  color: var(--lavender-dark);
+}
+
+/* ---------------------------------------------------------
+   📱 MÓVIL
+   --------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+  .album-container {
+    max-width: 100%;
+    padding: 43px 14px 55px;
+  }
+
+  .photo-frame-cartoon {
+    width: 176px;
+    padding-bottom: 24px;
+    margin-bottom: 23px;
+  }
+
+  .revenge-photo {
+    height: 153px;
+  }
+
+  .album-title {
+    font-size: 23px;
+  }
+
+  .album-subtitle {
+    font-size: 9px;
+    padding: 6px 11px;
+  }
+
+  .cards-grid {
+    gap: 34px;
+    padding-left: 96px;
+    padding-right: 96px;
+  }
+
+  .envelope-card {
+    width: 165px;
+    height: 120px;
+  }
+
+  .envelope-card.active .envelope-flap {
+    width: 165px;
+  }
+
+  .envelope-paper {
+    width: 144px;
+    height: 100px;
+  }
+
+  .floating-meme {
+    width: 66px;
+    max-width: 19vw;
+  }
+
+  .meme-1 {
+    left: 1%;
+  }
+
+  .meme-2 {
+    right: 1%;
+  }
+
+  /* Los memes 3 y 4 también se muestran en móvil */
+  .meme-3,
+  .meme-4 {
+    display: block;
+  }
+
+  .meme-5 {
+      left: 1%;
+    }
+
+  .spotify-widget-floating {
+    width: min(290px, calc(100vw - 28px));
+  }
+}
+
+/* ---------------------------------------------------------
+   🌙 MENOS MOVIMIENTO
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-meme,
+  .falling-rose,
+  .bat-wing,
+  .swipe-arrow {
+    animation: none !important;
+  }
+}
+
+
+/* =========================================================
+   MEMES DECORATIVOS - SCRAPBOOK
+   ========================================================= */
+
+.floating-memes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Cada meme */
+.meme-wrap {
+  position: absolute;
+  width: clamp(75px, 9vw, 120px);
+  pointer-events: none;
+}
+
+/* Imagen */
+.floating-meme {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border: 5px solid #fff;
+  border-radius: 4px;
+
+  box-shadow:
+    0 5px 12px rgba(80, 55, 70, 0.18),
+    2px 2px 0 rgba(180, 140, 170, 0.18);
+
+  background: #fff;
+
+  object-fit: cover;
+}
+
+/* Un pequeño detalle de cinta */
+.meme-wrap::before {
+  content: "";
+  position: absolute;
+
+  width: 45px;
+  height: 14px;
+
+  top: -8px;
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-4deg);
+
+  background: rgba(246, 202, 215, 0.75);
+
+  z-index: 2;
+}
+
+/* Posiciones de escritorio */
+
+.meme-1 {
+  top: 8%;
+  left: 4%;
+  transform: rotate(-8deg);
+}
+
+.meme-2 {
+  top: 30%;
+  right: 4%;
+  transform: rotate(7deg);
+}
+
+.meme-3 {
+  top: 63%;
+  left: 5%;
+  transform: rotate(5deg);
+}
+
+.meme-4 {
+  top: 72%;
+  right: 5%;
+  transform: rotate(-7deg);
+}
+
+.meme-5 {
+  top: 80%;
+  left: 5%;
+  transform: rotate(0deg);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .meme-wrap {
+    width: clamp(65px, 12vw, 95px);
+  }
+
+  .meme-1 {
+    top: 12%;
+    left: 2%;
+  }
+
+  .meme-2 {
+    top: 35%;
+    right: 2%;
+  }
+
+  .meme-3 {
+    top: 67%;
+    left: 2%;
+  }
+
+  .meme-4 {
+    top: 78%;
+    right: 2%;
+  }
+
+  .meme-5 {
+    top: 80%;
+    left: 5%;
+  }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /*
+     En celular NO dejamos los memes pegados
+     a los bordes de la pantalla.
+  */
+
+  .floating-memes {
+    position: absolute;
+    height: 100%;
+  }
+
+  .meme-wrap {
+    width: 72px;
+  }
+
+  .meme-wrap::before {
+    width: 32px;
+    height: 10px;
+    top: -6px;
+  }
+
+  .meme-1 {
+    top: 8%;
+    left: 3%;
+    transform: rotate(-7deg);
+  }
+
+  .meme-2 {
+    top: 29%;
+    right: 3%;
+    transform: rotate(6deg);
+  }
+
+  .meme-3 {
+    top: 55%;
+    left: 3%;
+    transform: rotate(5deg);
+  }
+
+  .meme-4 {
+    top: 75%;
+    right: 3%;
+    transform: rotate(-6deg);
+  }
+
+  .meme-5 {
+    top: 80%;
+    left: 5%;
+    transform: rotate(0deg);
+  }
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .meme-wrap {
+    width: 60px;
+  }
+
+  .meme-1 {
+    top: 7%;
+    left: 2%;
+  }
+
+  .meme-2 {
+    top: 31%;
+    right: 2%;
+  }
+
+  .meme-3 {
+    top: 57%;
+    left: 2%;
+  }
+
+  .meme-4 {
+    top: 78%;
+    right: 2%;
+  }
+
+  .meme-5 {
+    top: 80%;
+    left: 5%;
+  }
+}
+
+/* =========================================================
+   AJUSTE FINAL — MEMES VISIBLES Y RESPONSIVOS EN MÓVIL
+   Mantiene la estética actual y solo corrige su posición.
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .floating-memes {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .meme-wrap {
+    width: 68px;
+    max-width: 18vw;
+  }
+
+  .meme-1 {
+    top: 8%;
+    left: 2%;
+    transform: rotate(-7deg);
+  }
+
+  .meme-2 {
+    top: 30%;
+    right: 2%;
+    transform: rotate(6deg);
+  }
+
+  .meme-3 {
+    top: 62%;
+    left: 2%;
+    transform: rotate(5deg);
+    display: block;
+  }
+
+  .meme-4 {
+    top: 76%;
+    right: 2%;
+    transform: rotate(-6deg);
+    display: block;
+  }
+
+  .meme-5 {
+    top: 80%;
+    left: 5%;
+    transform: rotate(0deg);
+    display: block;
+  }
+}
+
+@media (max-width: 430px) {
+
+  .meme-wrap {
+    width: 100px;
+    max-width: 17vw;
+  }
+
+  .meme-1 {
+    top: 7%;
+    left: 5%;
+  }
+
+  .meme-2 {
+    top: 20%;
+    right: 5%;
+  }
+
+  .meme-3 {
+    top: 48%;
+    left: 6%;
+    display: block;
+  }
+
+  .meme-4 {
+    top: 75%;
+    right: 7%;
+    display: block;
+  }
+
+  .meme-5{
+    top: 80%;
+    left: 5%;
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   🔒 CONTADOR DE SEPTIEMBRE
+   ========================================================= */
+
+#septemberCard {
+  position: relative;
+  cursor: default;
+}
+
+#septemberCard.unlocked {
+  cursor: pointer;
+}
+
+/* Contenedor del contador */
+.september-countdown {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px;
+
+  font-family: inherit;
+  font-size: 9px;
+  color: var(--ink);
+  opacity: 0.9;
+}
+
+/* Números */
+.september-countdown span {
+  font-weight: 700;
+  font-size: 11px;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* Etiquetas */
+.september-countdown small {
+  font-size: 6px;
+  opacity: 0.75;
+  margin-right: 2px;
+}
+
+
+
+@keyframes septemberUnlock {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.5;
+  }
+
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
