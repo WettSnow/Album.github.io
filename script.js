@@ -93,3 +93,148 @@ const stopDragging = (e) => {
 
 widgetHeader.addEventListener('pointerup', stopDragging);
 widgetHeader.addEventListener('pointercancel', stopDragging);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =========================================================
+// 🔒 CONTADOR DE SEPTIEMBRE
+// Se desbloquea automáticamente el 1 de octubre a las 00:00
+// =========================================================
+
+const septemberCard = document.getElementById('septemberCard');
+const septemberStatus = document.getElementById('septemberStatus');
+const septemberCountdown = document.getElementById('septemberCountdown');
+
+const countdownDays = document.getElementById('countdownDays');
+const countdownHours = document.getElementById('countdownHours');
+const countdownMinutes = document.getElementById('countdownMinutes');
+const countdownSeconds = document.getElementById('countdownSeconds');
+
+// Fecha de desbloqueo:
+// 27 de septiembre de 2026 a las 00:00
+const septemberUnlockDate = new Date(2026, 8, 27, 19, 6, 0);
+
+function updateSeptemberCountdown() {
+
+  const now = new Date();
+  const difference = septemberUnlockDate - now;
+
+  // Si ya llegó la fecha de desbloqueo
+  if (difference <= 0) {
+
+    unlockSeptember();
+
+    return;
+  }
+
+  // Calculamos el tiempo restante
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+  const hours = Math.floor(
+    (difference / (1000 * 60 * 60)) % 24
+  );
+
+  const minutes = Math.floor(
+    (difference / (1000 * 60)) % 60
+  );
+
+  const seconds = Math.floor(
+    (difference / 1000) % 60
+  );
+
+  // Mostramos siempre dos dígitos
+  countdownDays.textContent = String(days).padStart(2, '0');
+  countdownHours.textContent = String(hours).padStart(2, '0');
+  countdownMinutes.textContent = String(minutes).padStart(2, '0');
+  countdownSeconds.textContent = String(seconds).padStart(2, '0');
+}
+
+
+// =========================================================
+// 🔓 DESBLOQUEAR SEPTIEMBRE
+// =========================================================
+
+function unlockSeptember() {
+
+  // Evitamos ejecutarlo varias veces
+  if (septemberCard.classList.contains('unlocked')) {
+    return;
+  }
+
+  // Creamos nuevamente el sobre con el diseño ORIGINAL
+  const unlockedCard = document.createElement('a');
+
+  unlockedCard.href = 'septiembre/index.html';
+  unlockedCard.className = 'envelope-card active unlocked';
+
+  unlockedCard.innerHTML = `
+    <div class="bat-wing wing-left"></div>
+
+    <div class="envelope-body">
+
+      <div class="envelope-paper">
+        <span class="month-text">SEPTIEMBRE</span>
+        <span class="status-text">DECRYPTED</span>
+      </div>
+
+      <div class="envelope-flap"></div>
+
+      <div class="envelope-heart-blood"></div>
+
+    </div>
+
+    <div class="bat-wing wing-right"></div>
+  `;
+
+  // Reemplazamos el sobre bloqueado por el nuevo
+  septemberCard.replaceWith(unlockedCard);
+
+  // Animación de desbloqueo
+  unlockedCard.style.animation = 'septemberUnlock 0.8s ease';
+}
+
+
+// =========================================================
+// ⏱️ ACTUALIZAR CONTADOR
+// =========================================================
+
+// Actualización inmediata
+updateSeptemberCountdown();
+
+// Actualizar cada segundo
+const septemberTimer = setInterval(() => {
+
+  updateSeptemberCountdown();
+
+  // Cuando llegue la fecha, dejamos de ejecutar el contador
+  if (new Date() >= septemberUnlockDate) {
+    clearInterval(septemberTimer);
+  }
+
+}, 1000);
