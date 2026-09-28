@@ -31,29 +31,19 @@
   
   <div class="photo-frame-cartoon" id="polaroidBtn" style="cursor: pointer;">
     <img src="MCR.jpg" alt="Demolition Lovers" class="revenge-photo">
-    <div class="photo-caption">CLICK FOR MUSIC †</div>
-    <div class="photo-caption">Our Sweet Revenge</div>
+    <div class="photo-caption">Toca para escuchar †</div>
+    <div class="photo-caption"></div>
   </div>
 
   <div class="spotify-widget-floating" id="spotifyWidget">
     <div class="widget-header">
-      <span class="widget-title">† MCR RADIO †</span>
+      <span class="widget-title">† Musica para ti †</span>
       <button class="widget-close-btn" id="closeSpotifyBtn">×</button>
     </div>
-    <iframe 
-      data-testid="embed-iframe" 
-      style="border-radius:0px;" 
-      src="https://open.spotify.com/embed/album/3DuiGV3J09SUhvp8gqNx8h?utm_source=generator&theme=0&si=1f14f7d436064d42" 
-      width="100%" 
-      height="152" 
-      frameBorder="0" 
-      allowfullscreen="" 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy">
-    </iframe>
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3oNQ6NkihVzQkV5qhk2Pbe?utm_source=generator&si=cbd165df07a54cb2" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 
-  <h1 class="album-title">THREE CHEERS FOR OUR MEMORIES</h1>
+  <h1 class="album-title">Para la niña mas linda del mundo</h1> 
   <p class="album-subtitle">Un almacén de recuerdos para la chica más linda, mes a mes. 🖤</p>
 
   <div class="carousel-wrapper">
@@ -117,10 +107,41 @@
         <div class="bat-wing wing-right"></div>
       </a>
 
+      <div class="envelope-card locked" id="septemberCard">
+        <div class="bat-wing wing-left"></div>
+
+        <div class="envelope-body">
+          <div class="envelope-paper">
+            <span class="month-text">SEPTIEMBRE</span>
+            <span class="status-text" id="septemberStatus">LOCKED</span>
+
+            <div class="september-countdown" id="septemberCountdown">
+              <span id="countdownDays">00</span>
+              <small>DÍAS</small>
+
+              <span id="countdownHours">00</span>
+              <small>HRS</small>
+
+              <span id="countdownMinutes">00</span>
+              <small>MIN</small>
+
+              <span id="countdownSeconds">00</span>
+              <small>SEG</small>
+            </div>
+          </div>
+
+          <div class="envelope-flap"></div>
+          <div class="locked-cross" id="septemberLock">†</div>
+        </div>
+
+        <div class="bat-wing wing-right"></div>
+      </div>
+            
+      
       <div class="envelope-card locked">
         <div class="envelope-body">
           <div class="envelope-paper">
-            <span class="month-text">SEP</span>
+            <span class="month-text">OCT.</span>
             <span class="status-text">LOCKED</span>
           </div>
           <div class="envelope-flap"></div>
@@ -132,11 +153,33 @@
   </div>
 </div>
 
-<div class="parental-advisory">
-  <div class="advisory-top">PARENTAL</div>
-  <div class="advisory-main">ADVISORY</div>
-  <div class="advisory-bottom">EXPLICIT LOVE CONTENT</div>
+
+<!-- MEMES DECORATIVOS -->
+<div class="floating-memes" aria-hidden="true">
+
+  <div class="meme-wrap meme-1">
+    <img src="img/meme1.gif" class="floating-meme" alt="">
+  </div>
+
+  <div class="meme-wrap meme-2">
+    <img src="img/meme2.jpg" class="floating-meme" alt="">
+  </div>
+
+  <div class="meme-wrap meme-3">
+    <img src="img/meme3.gif" class="floating-meme" alt="">
+  </div>
+
+  <div class="meme-wrap meme-4">
+    <img src="img/meme4.gif" class="floating-meme" alt="">
+  </div>
+
+  <div class="meme-wrap meme-5">
+    <img src="img/meme6.gif" class="floating-meme" alt="">
+  </div>
+
+
 </div>
+
 
 <script src="script.js"></script>
 </body>
