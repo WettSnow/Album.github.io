@@ -127,9 +127,9 @@ widgetHeader.addEventListener('pointercancel', stopDragging);
 // Se desbloquea automáticamente el 1 de octubre a las 00:00
 // =========================================================
 
-const septemberCard = document.getElementById('septemberCard');
-const septemberStatus = document.getElementById('septemberStatus');
-const septemberCountdown = document.getElementById('septemberCountdown');
+const octoberCard = document.getElementById('octoberCard');
+const octoberStatus = document.getElementById('octoberStatus');
+const octoberCountdown = document.getElementById('octoberCountdown');
 
 const countdownDays = document.getElementById('countdownDays');
 const countdownHours = document.getElementById('countdownHours');
@@ -137,18 +137,18 @@ const countdownMinutes = document.getElementById('countdownMinutes');
 const countdownSeconds = document.getElementById('countdownSeconds');
 
 // Fecha de desbloqueo:
-// 27 de septiembre de 2026 a las 00:00
-const septemberUnlockDate = new Date(2026, 8, 27, 19, 6, 0);
+// 04 de noviembre de 2026 a las 00:00
+const octoberUnlockDate = new Date(2026, 10, 3, 0, 0, 0);
 
-function updateSeptemberCountdown() {
+function updateOctoberCountdown() {
 
   const now = new Date();
-  const difference = septemberUnlockDate - now;
+  const difference = octoberUnlockDate - now;
 
   // Si ya llegó la fecha de desbloqueo
   if (difference <= 0) {
 
-    unlockSeptember();
+    unlockOctober();
 
     return;
   }
@@ -177,20 +177,20 @@ function updateSeptemberCountdown() {
 
 
 // =========================================================
-// 🔓 DESBLOQUEAR SEPTIEMBRE
+// 🔓 DESBLOQUEAR OCTUBRE
 // =========================================================
 
-function unlockSeptember() {
+function unlockOctober() {
 
   // Evitamos ejecutarlo varias veces
-  if (septemberCard.classList.contains('unlocked')) {
+  if (octoberCard.classList.contains('unlocked')) {
     return;
   }
 
   // Creamos nuevamente el sobre con el diseño ORIGINAL
   const unlockedCard = document.createElement('a');
 
-  unlockedCard.href = 'septiembre/index.html';
+  unlockedCard.href = 'octubre/index.html';
   unlockedCard.className = 'envelope-card active unlocked';
 
   unlockedCard.innerHTML = `
@@ -199,7 +199,7 @@ function unlockSeptember() {
     <div class="envelope-body">
 
       <div class="envelope-paper">
-        <span class="month-text">SEPTIEMBRE</span>
+        <span class="month-text">OCTUBRE</span>
         <span class="status-text">DECRYPTED</span>
       </div>
 
@@ -213,10 +213,10 @@ function unlockSeptember() {
   `;
 
   // Reemplazamos el sobre bloqueado por el nuevo
-  septemberCard.replaceWith(unlockedCard);
+  octoberCard.replaceWith(unlockedCard);
 
   // Animación de desbloqueo
-  unlockedCard.style.animation = 'septemberUnlock 0.8s ease';
+  unlockedCard.style.animation = 'octoberUnlock 0.8s ease';
 }
 
 
@@ -225,16 +225,16 @@ function unlockSeptember() {
 // =========================================================
 
 // Actualización inmediata
-updateSeptemberCountdown();
+updateOctoberCountdown();
 
 // Actualizar cada segundo
-const septemberTimer = setInterval(() => {
+const octoberTimer = setInterval(() => {
 
-  updateSeptemberCountdown();
+  updateOctoberCountdown();
 
   // Cuando llegue la fecha, dejamos de ejecutar el contador
-  if (new Date() >= septemberUnlockDate) {
-    clearInterval(septemberTimer);
+  if (new Date() >= octoberUnlockDate) {
+    clearInterval(octoberTimer);
   }
 
 }, 1000);
